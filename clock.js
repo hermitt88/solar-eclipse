@@ -1,6 +1,7 @@
 const clockContainer=document.querySelector(".js-clock"),
-clockTitle=clockContainer.querySelector("h1"),
-eclipse=clockContainer.querySelector("h2");
+clockTitle=clockContainer.querySelector(".js-title"),
+eclipse=clockContainer.querySelector(".ecl")
+maxiEcl=clockContainer.querySelector(".maxi");
 
 
 // 15:57 ~ 18:07
@@ -16,13 +17,17 @@ function getTime(){
 	const minutes = date.getMinutes();
 	const hours = date.getHours();
 	const seconds = date.getSeconds();
+    const hourMin = 60*hours+minutes;
 	clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${
 		minutes < 10 ? `0${minutes}` : minutes}:${
             seconds < 10 ? `0${seconds}` : seconds}`;
-    const hourMin = 60*hours+minutes;
     if(hourMin>=957 && hourMin<=1087) {
-        eclipse.innerText = `Portion of eclipse ${ecl[hourMin]} %`;
-    }
+		eclipse.innerText = `${ecl[hourMin]} %`;
+		
+		if(hourMin=1025) {
+			maxiEcl.style.display = 'inline';
+		} else {maxiEcl.style.display = 'inline';}
+	}
 }
 
 function init() {

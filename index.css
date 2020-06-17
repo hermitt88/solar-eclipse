@@ -19,3 +19,11 @@ body{
 .showing{
 	display: block;
 }
+
+h1, h2 {
+	display: inline;
+}
+
+.maxi {
+	display: none;
+}
