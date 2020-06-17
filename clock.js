@@ -23,10 +23,9 @@ function getTime(){
             seconds < 10 ? `0${seconds}` : seconds}`;
     if(hourMin>=957 && hourMin<=1087) {
 		eclipse.innerText = `${ecl[hourMin]} %`;
-		
 		if(hourMin=1025) {
 			maxiEcl.style.display = 'inline';
-		} else {maxiEcl.style.display = 'inline';}
+		} else {maxiEcl.style.display = 'none';}
 	}
 }
 
